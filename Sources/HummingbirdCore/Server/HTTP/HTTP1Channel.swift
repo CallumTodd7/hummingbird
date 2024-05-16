@@ -71,8 +71,4 @@ public struct HTTP1Channel: ServerChildChannel, HTTPChannelHandler {
 }
 
 /// Extend NIOAsyncChannel to ServerChildChannelValue so it can be used in a ServerChildChannel
-#if hasFeature(RetroactiveAttribute)
-extension NIOAsyncChannel: @retroactive ServerChildChannelValue {}
-#else
 extension NIOAsyncChannel: ServerChildChannelValue {}
-#endif
